@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tales of  Caratland</title>
+ <meta charset="UTF-8">
+  <meta name="description" content="A Fairytale-themed SEVENTEEN Artzine by Talented Fanartists">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<!-- CSS -->
+<link rel="shortcut icon" href="img/faviconB.ico">
+<link rel="stylesheet" type="text/css" href="css/css.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+
+</head>
+
+<body style="background-color:#D5DCE4; font-family: 'Handlee', cursive;">
+<div id="anc" class="container-fluid">
+	<video id="videoSM" width="100%" height="100%">
+   	<source id="smallVid" style="display:none" height="800px" src="img/M2.mp4" type="video/mp4">
+</video>
+<video id="videoBG" width="100%" height="800">
+    <source id="bigVid" style="display:none" src="img/M1.mp4" type="video/mp4">
+</video>
+	<div class="container Hclk">
+	<h2 class="cntAlign" style="cursor:pointer"><a href="#anc" id="1clickH"  onclick="playVideo()">Are you ready for an <span class="bluee">adventure?</span></a></h2>
+	</div>
+</div>
+
+</body>
+<script type="text/javascript">
+	$(document).ready(function () {
+  if ($(window).width() > 800) {
+    $('#videoBG').css('display', 'block');
+  } else {
+    $('#videoSM').css('display', 'block');
+  }
+});
+</script>
+
+<script type="text/javascript">
+	function playVideo(){
+    var video = document.getElementById('videoBG');
+    var videoS = document.getElementById('videoSM');
+    var textx = document.getElementById('1clickH');
+    textx.style.display = "none";
+
+    if(window.screen.width > 800) {
+    video.style.display = "block";
+    video.play();
+	}else{
+    videoS.style.display = "block";
+    videoS.play();
+    
+	}
+    video.addEventListener('ended',function(){
+       window.location = 'menu.html';
+  });
+    videoS.addEventListener('ended',function(){
+       window.location = 'menu.html';
+  });
+}
+	
+</script>
+</html>
